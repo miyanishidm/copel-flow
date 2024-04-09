@@ -1,0 +1,262 @@
+{
+  "cotacaoDolarDia": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "olinda.bcb.gov.br",
+      "path": "/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)",
+      "query":{
+        "$format":"json",
+        "$top": "100",
+        "dataCotacao": "<%=context.dataCotacao%>"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getAllProducts": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/api/cpq/products/?sort=name&sort_type=asc&page=1",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      },
+      "query":{
+        "sort":"name",
+        "sort_type": "asc",
+        "page": "<%=context.page%>"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getAllEmbalagens": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/custom_module/cm_embalagem/view/17004150001?per_page=100",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getAllDestinos": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/custom_module/cm_frete/view/17004150800",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getAllIcms": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/custom_module/cm_imposto/view/17004150004",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getVendedores": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/api/selector/owners",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getSearchContact": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/search.json",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      },
+      "query":{
+        "q":"<%=context.searchedWord%>",
+        "include": "sales_account",
+        "g": "1",
+        "per_page": "50",
+        "_": "1658335889081"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getSelectedContact": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/api/sales_accounts/",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getSelectedSubContact": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/sales_accounts/${contact.id}/lookup_sections/ContactForm/contacts?default_lookup=true&page=1&per_page=25&sort=created_at&sort_type=desc&include=owner,sales_accounts,creater,source,updater,campaign,contact_status,lead_score_information,territory,emails,lookup_information,lists,lifecycle_stage,lost_reason",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getListaPrecoCurrentProduct": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/custom_module/cm_tabela_de_preos/view/17004150910",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      },
+      "query":{
+        "page": "<%=context.currentPage_listaPreco%>",
+        "per_page": "100"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getSelectedSubContact": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "<%=context.url%>",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getSelectedContact": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "<%=context.url%>",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "getSelectedProductInfo": {
+    "schema": {
+      "protocol": "https",
+      "method": "GET",
+      "host": "intercroma.myfreshworks.com",
+      "path": "<%=context.url%>",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "saveFirebasePdfOnFresh": {
+    "schema": {
+      "protocol": "https",
+      "method": "POST",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/api/document_links",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "createPipelineDeal": {
+    "schema": {
+      "protocol": "https",
+      "method": "POST",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/api/deals",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  },
+  "createTask": {
+    "schema": {
+      "protocol": "https",
+      "method": "POST",
+      "host": "intercroma.myfreshworks.com",
+      "path": "/crm/sales/api/tasks",
+      "headers": {
+        "Authorization": "<%=context.api_key%>",
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {
+      "isOAuth": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+Index: config/requests.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"cotacaoDolarDia\": {\n    \"schema\": {\n      \"protocol\": \"https\",\n      \"method\": \"GET\",\n      \"host\": \"olinda.bcb.gov.br\",\n      \"path\": \"/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='09-29-2023'&$top=100&$format=json\"\n    }\n  }\n}\n
+===================================================================
+diff --git a/config/requests.json b/config/requests.json
+--- a/config/requests.json	
++++ b/config/requests.json	
+@@ -4,7 +4,13 @@
+       "protocol": "https",
+       "method": "GET",
+       "host": "olinda.bcb.gov.br",
+-      "path": "/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='09-29-2023'&$top=100&$format=json"
++      "path": "/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='09-29-2023'&$top=100&$format=json",
++      "headers": {
++        "Content-Type": "application/json"
++      }
++    },
++    "options": {
++      "isOAuth": false
+     }
+   }
+ }

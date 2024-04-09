@@ -1,0 +1,44 @@
+{
+  "platform-version": "2.3",
+  "product": {
+    "freshworks_crm": {
+      "location": {
+        "contact_entity_menu": {
+          "url": "index.html",
+          "icon": "icon.svg"
+        }
+      },
+      "events": {
+        "onDealUpdate": {
+          "handler": "onDealUpdateCallback"
+        }
+      },
+      "requests": {
+        "cotacaoDolarDia": {},
+        "getAllEmbalagens": {},
+        "getAllDestinos": {},
+        "getAllIcms": {},
+        "getVendedores": {},
+        "getSearchContact": {},
+        "getSelectedContact": {},
+        "getSelectedSubContact": {},
+        "getListaPrecoCurrentProduct": {},
+        "getSelectedProductInfo": {},
+        "getAllProducts": {},
+        "saveFirebasePdfOnFresh": {},
+        "createPipelineDeal": {},
+        "createTask": {}
+
+      },
+      "functions": {
+        "getDealPdf": {
+          "timeout": 20
+        }
+      }
+    }
+  },
+  "engines": {
+    "node": "18.15.0",
+    "fdk": "9.0.5"
+  }
+}
